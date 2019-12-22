@@ -6,7 +6,7 @@ import{FormBuilder} from '@angular/forms';
   templateUrl: './clch.component.html',
   styleUrls: ['./clch.component.css']
 })
-export class CLCHComponent implements OnChanges,  OnInit,DoCheck,OnDestroy {
+export class CLCHComponent implements   OnInit {
 //@Input()
 public employeeForm;
 public imagepath:File;
@@ -14,10 +14,7 @@ public imagepath:File;
     console.log("this is constructor");
    }
 
-  ngOnChanges()
-  {
-console.log("this ischange hook");
-  }
+  
   ngOnInit() {
     console.log("this is oninit hook");
    // console.log(this.employeeForm.value);
@@ -43,13 +40,6 @@ console.log("this ischange hook");
   {
 this.imagepath=file.item(0);
   }
-  ngDoCheck()
-  {
-console.log("this is do check hook");
-  }
-  ngOnDestroy()
-  {
-    console.log("this is destroy hook");
-  }
+  
 
 }
