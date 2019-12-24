@@ -1,9 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-  </h1>  
+<div style="padding:15px">
+  <ul class="nav nav-tabs">
+      <li routerLinkActive="active" style="padding:5px">
+          <a routerLink="home">Home</a>
+      </li>
+      <li routerLinkActive="active" style="padding:15px">
+          <a routerLink="create">create</a>
+      </li>
+  </ul>
+  <br/>
+  <router-outlet></router-outlet>
 </div>
-<app-clch></app-clch>
-<!-- <app-employee></app-employee> -->
 <router-outlet></router-outlet>
 

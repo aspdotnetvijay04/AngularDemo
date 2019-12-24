@@ -9,6 +9,7 @@ import { EmpserviceService } from './empservice.service';
 import { CreateEmpComponent } from './create-emp/create-emp.component';
 import{FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CLCHComponent } from './clch/clch.component';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 
 
 
@@ -17,7 +18,8 @@ import { CLCHComponent } from './clch/clch.component';
     AppComponent,
     EmployeeComponent,
     CreateEmpComponent,
-    CLCHComponent
+    CLCHComponent,
+    ReactiveformComponent
   ],
   imports: [
     BrowserModule,

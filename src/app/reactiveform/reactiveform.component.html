@@ -1,0 +1,75 @@
+<form id="form1" [formGroup]="empForm">
+    <div class="fluid-container">
+    
+    
+    <div class="row">
+        <div class="col-sm-6"> <label for="name">First Name</label></div>
+        <div class="col-sm-6"><input type="text" formControlName="name" class="form-control">
+        </div>
+        <span style="font-weight: bold;color: red;" *ngIf="!empForm.controls['name'].valid&&empForm.controls['name'].dirty">
+                <span *ngIf="empForm.controls.name.errors.required">Product Name is Required.</span>
+        </span>
+        </div>
+    <div class="row">
+        <div class="col-sm-6">Gender</div>
+        <div class="col-sm-6">
+            <select class="form-control" formControlName="gender">
+                    <option [ngValue]="undefined">Select Category</option>
+                <option *ngFor="let gl of genderlist">{{gl}}</option>
+            </select>
+        </div>
+        <span style="font-weight: bold;color: red;" *ngIf="!empForm.controls['gender'].valid&&empForm.controls['gender'].dirty&&empForm.controls['gender'].touched">
+                <span *ngIf="empForm.controls.gender.errors.required">Gender is Required.</span>
+              </span>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-6">Status</div>
+        <div class="col-sm-6">
+            <input type="radio" name="status" formControlName="status">Active
+            <input type="radio" name="status" formControlName="status">InActive
+        </div>
+        
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-6">Language Known</div>
+        <div class="col-sm-6" *ngFor="let ln of lnArray.controls; let i=index">
+            <input type="checkbox"  id="lnid{{i}}" [formControl]="ln" (change)=" clickchange()"> 
+            <label for="lnid{{i}}">{{languageknown[i]}}</label>      
+        </div>
+        <div *ngIf="chkerror"> al least one selection is required</div>
+    </div>
+    
+    
+    
+    <div class="row">
+        <div class="col-sm-6">Comment</div>
+        <div class="col-sm-6">
+                <textarea [formControl]="comment" cols="40" rows="5" class="form-control"></textarea>
+        </div>
+        <div class="form-row__description">
+                You have written {{ descriptionLength | async }} characters
+            </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-6">File Upload</div>
+        <div class="col-sm-6">
+            <input type="file" accept="image/*" formControlName="image" (change)="handleImageFile($event.target.files)" class="form-control">
+        </div>
+        <span style="font-weight: bold;color: red;" *ngIf="!empForm.controls['image'].valid&&empForm.controls['image'].dirty">
+                <span *ngIf="empForm.controls.image.errors.required">image is Required.</span>
+              </span>
+              
+    </div>
+    <div class="image-preview mb-3" *ngIf="previewUrl">
+        <img [src]="previewUrl" height="300" />                 
+    </div>
+    
+    {{sellist}}
+    <button type="submit" name="submit" (click)="savealldata()" class="btn btn-block btn-primary">Save</button>
+    
+    </div>
+    </form>
+    

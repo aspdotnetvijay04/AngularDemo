@@ -1,5 +1,5 @@
 import { Component ,Input,OnChanges,OnInit,DoCheck,OnDestroy } from '@angular/core';
-import{FormBuilder} from '@angular/forms';
+import{FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-clch',
@@ -13,13 +13,11 @@ public imagepath:File;
   constructor( private fb:FormBuilder) {
     console.log("this is constructor");
    }
-
-  
   ngOnInit() {
     console.log("this is oninit hook");
    // console.log(this.employeeForm.value);
    this.employeeForm = this.fb.group({
-    fullName: [],
+    fullName: ['',Validators.compose([Validators.required])],
     email: [],
     image:[],
     skills: this.fb.group({
