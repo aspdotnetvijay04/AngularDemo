@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, FormArray, NgForm} from '@angular/forms';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { element } from 'protractor';
+
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
@@ -10,7 +9,8 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./reactiveform.component.css']
 })
 export class ReactiveformComponent implements OnInit {
-  @ViewChild('empForm',null)  public createEmployeeForm1: NgForm;
+@ViewChild('empForm',null) public abcdform: FormGroup;
+
  public empForm:FormGroup;
  public genderlist: Array<string>=['male','female','others'];
  public languageknown:Array<string>=['hindi','English','marathi'];

@@ -10,6 +10,7 @@ import { CreateEmpComponent } from './create-emp/create-emp.component';
 import{FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CLCHComponent } from './clch/clch.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { CandeactivateserviceService } from './candeactivateservice.service';
 
 
 
@@ -28,7 +29,7 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
     FormsModule,
   ReactiveFormsModule
   ],
-  providers: [EmpserviceService],
+  providers: [EmpserviceService,CandeactivateserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
