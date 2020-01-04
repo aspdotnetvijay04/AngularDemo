@@ -6,11 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmpserviceService } from './empservice.service';
-import { CreateEmpComponent } from './create-emp/create-emp.component';
 import{FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { CLCHComponent } from './clch/clch.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { CandeactivateserviceService } from './candeactivateservice.service';
+import { DisplaydetailComponent } from './displaydetail/displaydetail.component';
 
 
 
@@ -18,9 +17,8 @@ import { CandeactivateserviceService } from './candeactivateservice.service';
   declarations: [
     AppComponent,
     EmployeeComponent,
-    CreateEmpComponent,
-    CLCHComponent,
-    ReactiveformComponent
+    ReactiveformComponent,
+    DisplaydetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {employeemodel} from '../model/employeemodel.model';
 import{EmpserviceService} from '../empservice.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee',
@@ -9,10 +10,11 @@ import{EmpserviceService} from '../empservice.service';
 })
 export class EmployeeComponent implements OnInit {
   
-  constructor(private empservice:EmpserviceService) { }
+  constructor(private empservice:EmpserviceService,private route:ActivatedRoute,private router:Router) { }
   private employees = [];
   private employees1:employeemodel[] = [];
   ngOnInit() {
+  
     this.empservice.getEmployee().subscribe((res : employeemodel[])=>{     
       this.employees1=res;
     });
@@ -34,5 +36,11 @@ this.empservice.Delete_products(event).subscribe
 (err)=>console.error()
 )
 }
+
+Detailemp(id:number)
+{
+  this.router.navigate(['/details',id]);
   
+  
+}
 }

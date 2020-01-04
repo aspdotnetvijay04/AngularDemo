@@ -7,7 +7,7 @@ import {employeemodel} from './model/employeemodel.model';
   providedIn: 'root'
 })
 export class EmpserviceService {
-
+  public myurl='http://localhost:3000/employees';
   constructor( private httpservice:HttpClient) {
 
   
@@ -16,6 +16,7 @@ export class EmpserviceService {
    {
      //D:\angproj\src\assets\db.json
      //http://localhost:3001/employees
+     
      return this.httpservice.get<employeemodel[]>('http://localhost:3000/employees');
    };
    
@@ -25,5 +26,10 @@ export class EmpserviceService {
 
                   Delete_products(id:number):Observable<void>{
                     return this.httpservice.delete<void>('http://localhost:3000/employees/'+id);
+                    }
+                    getbyid(id:number):Observable<employeemodel[]>
+                    {
+                      
+                     return this.httpservice.get<employeemodel[]>(`${this.myurl}/${id}`)
                     }
 }

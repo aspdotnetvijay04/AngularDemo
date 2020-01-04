@@ -1,5 +1,5 @@
 
-<div class="panel panel-primary" *ngFor="let employee of employees1">
+
     <div class="panel-heading">
       <h3 class="panel-title">{{employee.id}}</h3>
       <h3 class="panel-title">{{employee.name}}</h3>
@@ -69,17 +69,15 @@
               </div>
               <div class="col-xs-6">
                 : {{employee.isActive}}
-                <button  class="btn-primary" type="submit" (click)="deleteemp($event)"> Delete</button>
-                <button  class="btn-primary" type="submit" (click)="Editemp(employee.id)"> Edit</button>
-                <button  class="btn-primary" type="submit" (click)="Detailemp(employee.id)"> Details</button>
-              </div>
+                  </div>
             </div>
-  
+            <button  class="btn-primary" type="submit" routerLink="/home"> back</button>
+            <button  class="btn-primary" type="submit" (click)="nextemp(employee.id)"> next</button>
           </div>
   
         </div>
       </div>
     </div>
-  </div>
+
   
   
