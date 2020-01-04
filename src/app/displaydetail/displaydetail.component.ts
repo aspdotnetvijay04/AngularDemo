@@ -25,7 +25,11 @@ public _id:number;
 
   this.route.paramMap.subscribe(params => {
     this._id = +params.get('id');
-    this.employee = this.empservice.getbyid(this._id);
+   this.empservice.getbyid(this._id).subscribe(
+     (res)=>{
+      this.employee=res;
+     }
+   );
   });
   }
 
